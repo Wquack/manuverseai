@@ -3,28 +3,13 @@
   "builds": [
     {
       "src": "index.html",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "use": "@vercel/static-build"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/manifest.json",
-      "destination": "/manifest.json",
-      "permanent": true
-    },
-    {
-      "source": "/favicon.ico",
-      "destination": "/favicon.ico",
-      "permanent": true
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
